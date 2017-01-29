@@ -24,7 +24,7 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 
-# vue
+# vue2.x
 
 Open [https://www.github.com/xiaoke88/vue-football] to view it in browser
 
