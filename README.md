@@ -26,12 +26,12 @@ Your app is ready to be deployed!
 
 # vue2.x
 
-Open [https://www.github.com/xiaoke88/vue-football] to view it in browser
+Open [vue-football](https://www.github.com/xiaoke88/vue-football) to view it in browser
 
 
 # angular 1.x
 
-Open [https://github.com/xiaoke88/angular-football] to view it in browser
+Open [angular-football](https://github.com/xiaoke88/angular-football) to view it in browser
 
 
 
