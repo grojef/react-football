@@ -7,14 +7,12 @@ import React from 'react'
 
 import Footer from '../components/Footer'
 
-import MatchList from '../components/MatchList'
+import MatchListContainer from '../containers/MatchListContainer'
 
-const Root =()=>{
+const App =()=>{
     return (<div>
-        <MatchList/>
+        <MatchListContainer/>
         <Footer/>
     </div>)
 }
-
-
-export default Root;
+export default App;
