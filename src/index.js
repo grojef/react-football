@@ -21,8 +21,6 @@ import './assets/styles/style.css'
 
 const store  = createStore(reducer)
 
-store.dispatch(actions.loadMatch())
-
 render(
     <Provider store={store}>
     <App />

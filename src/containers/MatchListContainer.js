@@ -7,7 +7,9 @@ import MatchList from '../components/MatchList'
 
 import {connect} from 'react-redux'
 
-const MatchListContainer = ({matchs}) => (<MatchList matchs={matchs}/>)
+const MatchListContainer = ({matchs}) => {
+    return (<MatchList matchs={matchs}/>)
+}
 
 MatchListContainer.propsTypes = {
     matchs: PropTypes.array.isRequired

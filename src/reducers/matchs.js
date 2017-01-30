@@ -13,7 +13,6 @@ const initialState=[];
 export default function matchs(state=initialState,action){
     switch (action.type){
         case types.LOAD_MATCH:
-            state
             return zc;
         default:
             return state;
