@@ -3,10 +3,15 @@
  */
 
 import React, {PureComponent} from 'react'
+import {Link} from 'react-router'
 
 export default class Footer extends PureComponent {
 
+
     render() {
+
+        const {onChange} = this.props;
+
         return (<div className="pick-area">
             <div className="pick-toolbar">
                 <div className="pick-bets-con">
@@ -15,7 +20,7 @@ export default class Footer extends PureComponent {
                 <div className="tc-btn-group">
                     <a className="tc-btn tc-btn-info fs24">重置
                     </a>
-                    <a className="tc-btn tc-btn-large tc-btn-primary">请选择</a>
+                    <a className="tc-btn tc-btn-large tc-btn-primary" onClick={()=>{onChange()}}>请选择</a>
                 </div>
             </div>
         </div>)

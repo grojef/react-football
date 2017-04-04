@@ -1,18 +1,14 @@
 /**
- * Created by kexiao on 17/1/25.
+ * Created by kexiao on 17/3/17.
  */
+import React from "react";
 
-
-import React from 'react'
-
-import Footer from '../components/Footer'
-
-import MatchListContainer from '../containers/MatchListContainer'
-
-const App =()=>{
-    return (<div>
-        <MatchListContainer/>
-        <Footer/>
-    </div>)
+const App = ({children}) => {
+    return (
+       <div>
+           {children}
+       </div>
+    )
 }
+
 export default App;
