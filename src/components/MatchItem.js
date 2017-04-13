@@ -1,17 +1,40 @@
 /**
  * Created by kexiao on 17/1/25.
  */
-
-import React from 'react'
-
-import SelectItem from './SelectItem'
+import React from "react";
+import SelectItem from "./SelectItem";
 
 
 export default class MatchItem extends React.PureComponent {
 
 
+    componentWillReceiveProps(nextProps) {
+
+    }
+
+    componentWillUpdate(){
+        //console.log('componentWillUpdate');
+    }
+
+    componentDidUpdate(){
+        //console.log('componentDidUpdate');
+    }
+
+    hiddenMatch(id){
+        this.props.toggleMatch(id)
+    }
+
+    renderSelectItem() {
+        const {spfopen, rspfopen, concede, 'spf-sp': spf, 'xspf-sp': rspf, id,comment} = this.props.item;
+
+        return (<tbody>
+        {spfopen ? <SelectItem select={comment} gameId={4071} addItem={(orgs)=>(this.props.addItem(id,`4071-${orgs}`))}  sp={spf} /> : null}
+        {rspfopen ? <SelectItem select={comment} gameId={4076} addItem={(orgs)=>(this.props.addItem(id,`4076-${orgs}`))} sp={rspf} concede={concede} /> : null}
+        </tbody>);
+    }
+
     render() {
-        const {matchName, endSaleTimeStr, homeTeam, matchNo, guestTeam,spfopen, rspfopen,concede,'spf-sp':spf,'xspf-sp':rspf} = this.props;
+        const {matchName, endSaleTimeStr, homeTeam, matchNo, guestTeam,id} = this.props.item;
         return (
             <li >
                 <div className="match_bd">
@@ -29,18 +52,15 @@ export default class MatchItem extends React.PureComponent {
                             <table className="ft_tb" width="100%">
                                 <thead>
                                 <tr>
-                                    <td className="center">
-                                        <a className="games_nums" href="javascript:;">{matchNo}</a>
+                                    <td className="center" onClick={()=>this.hiddenMatch(id)}>
+                                        <a className="games_nums">{matchNo}</a>
                                     </td>
                                     <td className="center"><span className="fs10">{homeTeam}</span></td>
                                     <td className="center"><span className="gray">VS</span></td>
                                     <td className="center"><span className="">{guestTeam}</span></td>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                {spfopen?(<SelectItem sp={spf}/>):null}
-                                {rspfopen?(<SelectItem sp={rspf} concede={concede}/>):null}
-                                </tbody>
+                                {this.renderSelectItem()}
                             </table>
                         </div>
                     </div>

@@ -11,13 +11,15 @@ let createActionCreator=(type,...argsName)=>{
     }
 }
 
-export const addItem = createActionCreator(actionTypes.ADD_ITEM,'id')
+export const addItem = createActionCreator(actionTypes.ADD_ITEM,'id','key')
 
 export const loadMatch = createActionCreator(actionTypes.LOAD_MATCH)
 
 export const reset = createActionCreator(actionTypes.RESET)
 
 export const deleteItem =createActionCreator(actionTypes.DELETE_ITEM,'id')
+
+export const toggleMatch =createActionCreator(actionTypes.TOGGLE_MATCH,'id')
 
 
 

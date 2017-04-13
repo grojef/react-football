@@ -41,7 +41,7 @@ body, a, img, label, button, input, textarea, select {
   -webkit-align-items: center;
   align-items: center;
 }
-.scrollable { display: -webkit-box; display: box;}
+.scrollable { display: -webkit-box; display: flex;}
 .aequilatus li { 
     -webkit-box-flex: 1; 
     -ms-flex: 1; 
@@ -415,9 +415,9 @@ body, a, img, label, button, input, textarea, select {
 .tc-btn-group {
     margin-left:-.5rem;
     margin-right:-.5rem;
-    display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
+    display: flex;
 }
 .tc-btn-group .tc-btn {
     display: block;
@@ -475,11 +475,13 @@ body, a, img, label, button, input, textarea, select {
     -webkit-box-flex: 0!important;
     -ms-flex: none!important;
     box-flex: 0!important;
+    flex: 1;
 }
 .tc-btn-large {
     height: 4rem;
     font-size: 1.6rem;
     line-height: 2.2rem;
+    flex: 3;
 }
 
 /*== icon plus 加减号 ==*/
@@ -940,7 +942,7 @@ body, a, img, label, button, input, textarea, select {
     -webkit-user-select:none;user-select:none;-webkit-transition:max-height .2s linear;transition:max-height .2s linear;
 }
 .numKB-wrap-on {max-height:10rem;}
-.numKB-row {display:-webkit-box;display:box;background:#333;}
+.numKB-row {display:-webkit-flex;display:flex;background:#333;}
 .numKB-row div  {
     position:relative;-webkit-box-flex:1;box-flex:1;width:1px;height:4.5rem;
     border-right:1px solid #444;border-bottom:1px solid #444;
@@ -994,4 +996,27 @@ button.numKB-on {color:#FFF;background-color:#333!important;}
 td.center{
     text-align: center;
 }
+.r-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    z-index: 1000;
+}
 
+.r-message .r-message-notice {
+    font-size: 14px;
+    background: rgba(40, 40, 40, .75);
+    border-radius: 5px;
+    color: #fff;
+    padding: 7px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border: 0 solid transparent;
+    display: block;
+    width: auto;
+    line-height: 1.5;
+    vertical-align: middle;
+    position: relative;
+    margin: 10px 0;
+}

@@ -1,24 +1,33 @@
 /**
  * Created by kexiao on 17/1/30.
  */
-import React, {PropTypes} from 'react'
+import React, {PropTypes} from "react";
 
-import MatchList from '../components/MatchList'
+import MatchList from "../components/MatchList";
 
-import {connect} from 'react-redux'
+import {connect} from "react-redux";
 
-const MatchListContainer = ({matchs}) => {
-    return (<MatchList matchs={matchs}/>)
+import {bindActionCreators} from "redux";
+
+import * as actions from "../actions";
+
+const MatchListContainer = ({matches, actions}) => {
+
+    return (<MatchList matches={matches} actions={actions}/>)
 }
 
 MatchListContainer.propsTypes = {
-    matchs: PropTypes.array.isRequired
+    matches: PropTypes.array.isRequired,
+    addItem: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    matchs: state.matchs
+    matches: state.matches
 })
 
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(actions, dispatch)
+})
 export default connect(
-    mapStateToProps
+    mapStateToProps, mapDispatchToProps
 )(MatchListContainer)

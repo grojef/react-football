@@ -2,15 +2,36 @@
  * Created by kexiao on 17/1/25.
  */
 
-import React, {PureComponent} from 'react'
-import {Link} from 'react-router'
+import React, {PureComponent} from "react";
+import Notification from 'rc-notification';
+import {browserHistory} from 'react-router'
+
+let notification;
+
+const getNotification=(props)=>{
+   return  notification = notification ||  Notification.newInstance({props});
+}
+
 
 export default class Footer extends PureComponent {
 
 
-    render() {
+    onCheck() {
+        let matches = this.props.matches;
+        let matchCount =matches.filter((match) => {
+            return Object.values(match.comment).filter(value => value === true).length > 0
+        }).length;
+        if(matchCount !=2){
+            getNotification().notice({
+                content:<div className="r-message"><span><p className="r-message-notice">请选择2场比赛</p></span></div>,
+            });
+        }else{
+            browserHistory.push('/bet')
+        }
 
-        const {onChange} = this.props;
+    }
+
+    render() {
 
         return (<div className="pick-area">
             <div className="pick-toolbar">
@@ -20,7 +41,7 @@ export default class Footer extends PureComponent {
                 <div className="tc-btn-group">
                     <a className="tc-btn tc-btn-info fs24">重置
                     </a>
-                    <a className="tc-btn tc-btn-large tc-btn-primary" onClick={()=>{onChange()}}>请选择</a>
+                    <a className="tc-btn tc-btn-large tc-btn-primary" onClick={() => this.onCheck()}>请选择</a>
                 </div>
             </div>
         </div>)
