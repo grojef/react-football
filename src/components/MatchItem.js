@@ -12,29 +12,33 @@ export default class MatchItem extends React.PureComponent {
 
     }
 
-    componentWillUpdate(){
+    componentWillUpdate() {
         //console.log('componentWillUpdate');
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         //console.log('componentDidUpdate');
     }
 
-    hiddenMatch(id){
-        this.props.toggleMatch(id)
-    }
 
     renderSelectItem() {
-        const {spfopen, rspfopen, concede, 'spf-sp': spf, 'xspf-sp': rspf, id,comment} = this.props.item;
+        const {spfopen, rspfopen, concede, 'spf-sp': spf, 'xspf-sp': rspf, id, comment} = this.props.item;
 
         return (<tbody>
-        {spfopen ? <SelectItem select={comment} gameId={4071} addItem={(orgs)=>(this.props.addItem(id,`4071-${orgs}`))}  sp={spf} /> : null}
-        {rspfopen ? <SelectItem select={comment} gameId={4076} addItem={(orgs)=>(this.props.addItem(id,`4076-${orgs}`))} sp={rspf} concede={concede} /> : null}
+        {
+            [[spfopen, 4071, spf,0], [rspfopen, 4076, rspf,concede]].map((c) => {
+                let [status, gameId, sp,concede] = c;
+                if (status) {
+                    return <SelectItem concede={concede} key={`${id}-${gameId}`} select={comment} gameId={gameId}
+                                       addItem={(orgs) => (this.props.addItem(id, `${gameId}-${orgs}`))}
+                                       sp={sp}/>
+                }
+            })}
         </tbody>);
     }
 
     render() {
-        const {matchName, endSaleTimeStr, homeTeam, matchNo, guestTeam,id} = this.props.item;
+        const {matchName, endSaleTimeStr, homeTeam, matchNo, guestTeam, id} = this.props.item;
         return (
             <li >
                 <div className="match_bd">
@@ -52,7 +56,7 @@ export default class MatchItem extends React.PureComponent {
                             <table className="ft_tb" width="100%">
                                 <thead>
                                 <tr>
-                                    <td className="center" onClick={()=>this.hiddenMatch(id)}>
+                                    <td className="center">
                                         <a className="games_nums">{matchNo}</a>
                                     </td>
                                     <td className="center"><span className="fs10">{homeTeam}</span></td>
