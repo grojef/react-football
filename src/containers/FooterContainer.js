@@ -3,13 +3,15 @@
  */
 import React, {PureComponent} from "react";
 import {connect} from "react-redux";
+import {bindActionCreators} from 'redux'
 import Footer from "../components/Footer";
+import * as actions  from '../actions'
 
 class FooterContainer extends PureComponent {
 
     render() {
         return(<div>
-            <Footer matches={this.props.matches} onChange={this.handleChange}/>
+            <Footer matches={this.props.matches} reSet={this.props.actions.reset}/>
         </div>)
     }
 }
@@ -17,5 +19,10 @@ class FooterContainer extends PureComponent {
 const mapStateToProps = state => ({
     matches: state.matches
 })
-export default connect(mapStateToProps)(FooterContainer)
+
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(actions, dispatch)
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(FooterContainer)
 

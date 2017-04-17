@@ -18,7 +18,7 @@ class MatchList extends PureComponent {
     render() {
 
         const {matches,actions} = this.props;
-        let filterMatches = matches.filter((match)=>match.completed==false);
+        let filterMatches = matches.filter((match)=>match.completed===false);
         return (<div id="jq_indent">
                 <div className="k-tabs bg_f5" style={{top: 0, bottom: 7.7 + 'rem'}}>
                     <div className="all_match_tabs">

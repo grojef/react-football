@@ -903,6 +903,7 @@ body, a, img, label, button, input, textarea, select {
 .sucs_fail{
 	display: block;padding: 1rem .5rem;line-height: 2rem;
 	background: #eee;border: 1px solid #bbb; box-shadow: 0 2px 0 #eee;
+    border-radius: 5%;
 }
 .sucs_fail .name{color: #333;}
 .sucs_fail.select {background: #e04241; border: 1px solid #e04241; color: #fff;}
@@ -971,7 +972,7 @@ button.numKB-on {color:#FFF;background-color:#333!important;}
 .gamesList{ background-color: #fff; padding-left: 1.25rem; line-height: 1; font-size: 1.5rem;}
 .gamesList li{ padding:1rem 1rem 1rem 0; border-bottom: 1px solid #ddd;}
 .gamesListBox{ margin-top: 1rem;}
-.glb_btn{ float: left; width: 7rem; height: 4rem; line-height: 4rem; margin-bottom: .4rem; margin-right: .4rem; border:0; background-color: #e04241; color: #fff;}
+.glb_btn{ float: left; width: 7rem; height: 4rem; line-height: 4rem; margin-bottom: .4rem; margin-right: .4rem; border:0;border-radius: 5%; background-color: #e04241; color: #fff;}
 
 .sxArea td{ padding:0 .5rem;}
 

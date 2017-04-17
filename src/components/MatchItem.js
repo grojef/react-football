@@ -38,7 +38,7 @@ export default class MatchItem extends React.PureComponent {
     }
 
     render() {
-        const {matchName, endSaleTimeStr, homeTeam, matchNo, guestTeam, id} = this.props.item;
+        const {matchName, endSaleTimeStr, homeTeam, matchNo, guestTeam} = this.props.item;
         return (
             <li >
                 <div className="match_bd">

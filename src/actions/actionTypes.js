@@ -11,3 +11,7 @@ export const RESET='RESET'
 
 export const TOGGLE_MATCH='TOGGLE_MATCH'
 
+export const CLEAR_ITEM='CLEAR_ITEM'
+
+export const DELETE_ITEM='DELETE_ITEM'
+
