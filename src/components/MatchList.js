@@ -11,7 +11,7 @@ class MatchList extends PureComponent {
 
     componentDidMount() {
         if (this.props.matches.length === 0) {
-            this.props.actions.loadMatch();
+            this.props.actions.fetchMatch();
         }
     }
 

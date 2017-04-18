@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-const PickArea=()=>{
+const PickArea=({betComfirm})=>{
 
         return (
             <div className="pick-area">
@@ -17,7 +17,7 @@ const PickArea=()=>{
                     <div className="tc-btn-group">
                         <a id="js_bet_mul" href="javascript:void(0);" className="tc-btn tc-btn-info fs24">投1倍</a>
                         <a id="js_bet_mul2" href="javascript:void(0);" className="tc-btn tc-btn-info fs24">2串1</a>
-                        <a href="javascript:void(0);" className="tc-btn tc-btn-large tc-btn-primary fs24">
+                        <a href="javascript:void(0);" className="tc-btn tc-btn-large tc-btn-primary fs24" onClick={betComfirm}>
                             立即支付2.00元
                         </a>
                     </div>
